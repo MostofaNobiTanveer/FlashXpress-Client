@@ -230,7 +230,8 @@ const Navbar = () => {
 
             <NavLink
               to="/terms"
-              className="text-gray-300 hover:bg-smalt-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-smalt-200 hover:bg-smalt-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Terms
             </NavLink>
@@ -238,7 +239,8 @@ const Navbar = () => {
             {user?.email && (
               <NavLink
                 to="/parcels"
-                className="text-gray-300 hover:bg-smalt-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-smalt-200 hover:bg-smalt-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Parcels
               </NavLink>

@@ -31,6 +31,7 @@ const CreateParcel = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
     data.status = "pending";
+    data.total_payable = subTotal;
     fetch("https://polar-fjord-39630.herokuapp.com/createParcel", {
       method: "POST",
       headers: {
@@ -41,7 +42,6 @@ const CreateParcel = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert("Order processed Successfully");
           reset();
           setSubTotal(0);
           setIsLoading(false);
