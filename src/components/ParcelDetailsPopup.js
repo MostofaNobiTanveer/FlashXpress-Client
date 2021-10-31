@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import Loading from "./Loading";
 
 const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
   const [parcelStatus, setParcelStatus] = useState({ status: "" });
+  const [loading, setLoading] = useState(false);
   const {
     _id,
     sender_name,
@@ -25,13 +27,18 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
 
   const handleSubmit = (e, id) => {
     e.preventDefault();
+    setLoading(true);
     fetch(`https://polar-fjord-39630.herokuapp.com/updateParcel/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(parcelStatus),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          setLoading(false);
+        }
+      });
   };
 
   return (
@@ -171,54 +178,45 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
                       <span className="uppercase inline-flex items-center px-4 py-2 rounded-md text-xs font-medium bg-smalt-500 text-white">
                         {status}
                       </span>
-                      <form
-                        onSubmit={(e) => handleSubmit(e, _id)}
-                        className="flex-1 w-full flex gap-4 items-center justify-between"
-                      >
-                        <select
-                          required
-                          id="parcel_status"
-                          value={parcelStatus.status}
-                          onChange={(e) =>
-                            setParcelStatus({ status: e.target.value })
-                          }
-                          name="parcel_status"
-                          className="bg-gray-50 flex-1 text-sm text-smalt-900 py-2 block px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                      {loading ? (
+                        <div className="flex items-center mt-1 justify-center">
+                          <div className="w-8 h-8 border-t-4 border-b-4 border-smalt-600 rounded-full animate-spin"></div>
+                        </div>
+                      ) : (
+                        <form
+                          onSubmit={(e) => handleSubmit(e, _id)}
+                          className="flex-1 w-full flex gap-4 items-center justify-between"
                         >
-                          <option value="">Select Status</option>
-                          <option value="picked">Picked</option>
-                          <option value="processing">Processing</option>
-                          <option value="completed">Completed</option>
-                          <option value="cancles">Cancled</option>
-                        </select>
-                        <button
-                          type="submit"
-                          className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-smalt-500 text-xm font-normal text-white hover:bg-smalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-smalt-500 sm:ml-3 sm:w-auto sm:text-sm"
-                        >
-                          Update Status
-                        </button>
-                      </form>
+                          <select
+                            required
+                            id="parcel_status"
+                            value={parcelStatus.status}
+                            onChange={(e) =>
+                              setParcelStatus({ status: e.target.value })
+                            }
+                            name="parcel_status"
+                            className="bg-gray-50 flex-1 text-sm text-smalt-900 py-2 block px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                          >
+                            <option value="">Select Status</option>
+                            <option value="picked">Picked</option>
+                            <option value="processing">Processing</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancles">Cancled</option>
+                          </select>
+                          <button
+                            type="submit"
+                            className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-smalt-500 text-xm font-normal text-white hover:bg-smalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-smalt-500 sm:ml-3 sm:w-auto sm:text-sm"
+                          >
+                            Update Status
+                          </button>
+                        </form>
+                      )}
                     </dd>
                   </div>
                 </dl>
               </div>
             </div>
           </div>
-          {/* buttons */}
-          {/* <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-            <button
-              type="button"
-              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              Deactivate
-            </button>
-            <button
-              type="button"
-              className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
-            >
-              Cancel
-            </button>
-          </div> */}
         </div>
       </div>
     </div>
