@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+// import { useForm } from "react-hook-form";
 
 const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
+  // const { register, handleSubmit, reset } = useForm();
+  const [parcelStatus, setParcelStatus] = useState({ status: "" });
+  // const [singleParcel, setSingleParcel] = useState({});
   const {
     _id,
     sender_name,
@@ -21,6 +25,18 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
     status,
     total_payable,
   } = parcel;
+
+  const handleSubmit = (e, id) => {
+    e.preventDefault();
+    fetch(`https://polar-fjord-39630.herokuapp.com/updateParcel/${id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(parcelStatus),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div className="fixed z-50 inset-0 overflow-y-auto no-scrollbar max-w-5xl w-full mx-auto">
       <div className="min-h-screen pt-4 px-2 sm:px-4 pb-10 ">
@@ -154,13 +170,37 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
                     <dt className="text-base font-medium text-smalt-500">
                       Current Status
                     </dt>
-                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                      <h1 className="text-base font-medium">
-                        Your Parcel is on{" "}
-                        <span className="uppercase ml-4 inline-flex items-center px-4 py-2 rounded-md text-xs font-medium bg-smalt-500 text-white">
-                          {status}
-                        </span>
-                      </h1>
+                    <dd className="mt-2 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex flex-col gap-2 items-start justify-between">
+                      <span className="uppercase inline-flex items-center px-4 py-2 rounded-md text-xs font-medium bg-smalt-500 text-white">
+                        {status}
+                      </span>
+                      <form
+                        onSubmit={(e) => handleSubmit(e, _id)}
+                        className="flex-1 w-full flex gap-4 items-center justify-between"
+                      >
+                        <select
+                          required
+                          id="parcel_status"
+                          value={parcelStatus.status}
+                          onChange={(e) =>
+                            setParcelStatus({ status: e.target.value })
+                          }
+                          name="parcel_status"
+                          className="bg-gray-50 flex-1 text-sm text-smalt-900 py-2 block px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        >
+                          <option value="">Select Status</option>
+                          <option value="picked">Picked</option>
+                          <option value="processing">Processing</option>
+                          <option value="completed">Completed</option>
+                          <option value="cancles">Cancled</option>
+                        </select>
+                        <button
+                          type="submit"
+                          className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-smalt-500 text-xm font-normal text-white hover:bg-smalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-smalt-500 sm:ml-3 sm:w-auto sm:text-sm"
+                        >
+                          Update Status
+                        </button>
+                      </form>
                     </dd>
                   </div>
                 </dl>

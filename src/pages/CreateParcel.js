@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
 import ScrollToTop from "../utils/ScrollToTop";
 import { useForm } from "react-hook-form";
 import { useAppContext } from "../contexts/AppProvider";
@@ -43,7 +42,6 @@ const CreateParcel = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          toast.success("New Parcel Added Successfully!");
           reset();
           setSubTotal(0);
           setIsLoading(false);

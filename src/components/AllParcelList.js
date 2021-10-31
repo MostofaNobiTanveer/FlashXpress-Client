@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParcelContext } from "../contexts/ParcelProvider";
 import ScrollToTop from "../utils/ScrollToTop";
 import EmptyParcelList from "./EmptyParcelList";

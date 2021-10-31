@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import EmptyParcelList from "../components/EmptyParcelList";
 import Loading from "../components/Loading";
 import SingleParcelList from "../components/SingleParcelList";
-import { useAppContext } from "../contexts/AppProvider";
 import { useParcelContext } from "../contexts/ParcelProvider";
 import ScrollToTop from "../utils/ScrollToTop";
 

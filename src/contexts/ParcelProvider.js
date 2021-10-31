@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { useAppContext } from "./AppProvider";
 
 const ParcelContext = createContext();
@@ -49,7 +48,6 @@ export const ParcelProvider = ({ children }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
-            toast("Parcel Deleted Successfully!");
             setControl(!control);
             setIsLoading(false);
           } else {

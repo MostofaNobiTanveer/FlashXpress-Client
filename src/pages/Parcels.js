@@ -8,13 +8,6 @@ const Parcels = () => {
   const [parcelOf, setParcelOf] = useState("all");
   const { allParcelList, myParcelList } = useParcelContext();
 
-  // const handleAllParcelCount = (n) => {
-  //   setParcelCount({ allParcel: n });
-  // };
-  // const handleMyParcelCount = (n) => {
-  //   setParcelCount({ myParcel: n });
-  // };
-
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-4 lg:py-10 flex-1">
       <ScrollToTop />

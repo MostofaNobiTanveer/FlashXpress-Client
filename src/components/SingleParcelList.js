@@ -19,23 +19,8 @@ const SingleParcelList = ({ parcel, handleParcelDelete }) => {
     setModalIsOpen(status);
   };
 
-  // const { control } = useDelete();
-  // const handleParcelDelete = (id) => {
-  // fetch(`https://polar-fjord-39630.herokuapp.com/deleteParcel/${id}`, {
-  //   method: "DELETE",
-  //   headers: { "content-type": "application/json" },
-  // })
-  //   .then((res) => res.json())
-  //   .then((data) => {
-  //     if (data.deletedCount) {
-  //       alert("deleted");
-  //     } else {
-  //     }
-  //   });
-  // };
-
   return (
-    <li className="hover:bg-white">
+    <li className="bg-white hover:bg-gray-100">
       {modalIsOpen && (
         <ParcelDetailsPopup parcel={parcel} handleModalOpen={handleModalOpen} />
       )}
@@ -91,7 +76,7 @@ const SingleParcelList = ({ parcel, handleParcelDelete }) => {
                   />
                 </svg>
               </button>
-              <button className="inline-flex text-xs leading-5 font-semibold text-smalt-500">
+              {/* <button className="inline-flex text-xs leading-5 font-semibold text-smalt-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -106,7 +91,7 @@ const SingleParcelList = ({ parcel, handleParcelDelete }) => {
                     d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                   />
                 </svg>
-              </button>
+              </button> */}
               <button
                 onClick={() => handleParcelDelete(_id)}
                 className="inline-flex text-xs leading-5 font-semibold text-smalt-500"
