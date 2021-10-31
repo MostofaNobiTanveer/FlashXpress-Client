@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Loading from "./Loading";
 
 const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
   const [parcelStatus, setParcelStatus] = useState({ status: "" });
@@ -198,6 +197,7 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
                             className="bg-gray-50 flex-1 text-sm text-smalt-900 py-2 block px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                           >
                             <option value="">Select Status</option>
+                            <option value="picked">Pending</option>
                             <option value="picked">Picked</option>
                             <option value="processing">Processing</option>
                             <option value="completed">Completed</option>

@@ -38,7 +38,7 @@ const SingleParcelList = ({ parcel, handleParcelDelete }) => {
 
           {/* sender */}
           <div className="hidden sm:block">
-            <div className="flex flex-col gap-0.5 text-sm">
+            <div className="flex flex-col items-start gap-0.5 text-sm">
               <p className="text-smalt-500 font-medium">{sender_name}</p>
               <p className="text-xs text-gray-600">{sender_email}</p>
               <p className="text-xs text-smalt-800 font-medium">
@@ -48,7 +48,7 @@ const SingleParcelList = ({ parcel, handleParcelDelete }) => {
           </div>
 
           {/* action buttons */}
-          <div className="flex-shrink-0 flex flex-col items-center gap-2">
+          <div className="flex-shrink-0 flex flex-col items-end justify-center gap-2">
             <div className="flex items-center gap-1.5">
               <button
                 onClick={() => handleModalOpen(true)}
