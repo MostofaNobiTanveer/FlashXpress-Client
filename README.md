@@ -31,44 +31,38 @@ This is [FlashXpress](https://flashxpress-53e86.web.app/), one of the best deliv
 ```
 ─src
     ├───components
-    │       Banner.js
-    │       Brands.js
-    │       DocCard.js
+    │       AllParcelList.js
+    │       EmptyParcelList.js
     │       Features.js
-    │       Header.js
     │       Footer.js
-    │       Loader.js
-    │       SpecialityList.js
-    │       stats.js
+    │       Hero.js
+    │       LilBanner.js
+    │       Loading.js
+    │       Navbar.js
+    │       ParcelDetailsPopup.js
+    │       Services.js
+    │       Signin.js
+    │       SingleParcelList.js
     ├───contexts
-    │       FetchProvider.js 
+    │       AppProvider.js 
+    │       ParcelProvider.js 
     ├───firebase
     │       firebase.config.js
     │       firebase.init.js
     ├───hooks
-    │       useFetch.js
+    │       useFirebase.js
     ├───pages
-    │   ├───About
-    │   │       About.js
-    │   ├───Appoinments
-    │   │       Appointments.js
-    │   │───BookAppointment
-    │   │       BookAppointment.js
-    │   │───DocInfo
-    │   │       DocInfo.js
-    │   │───Doctors
-    │   │       Doctors.js
-    │   │───FAQ
-    │   │       FAQ.js
-    │   │───Form
-    │   │       signin.js
-    │   │       signup.js
-    │   │───Home
-    │   │       Home.js
-    │   │───NotFound
-    │   │       Notfound.js
-    │   │───PrivacyPolicies
-    │           PrivacyPolicies.js
+    │   │   About.js
+    │   │   Coverage.js
+    │   │   CreateParcel.js
+    │   │   Home.js
+    │   │   MyParcel.js
+    │   │   NOtFound.js
+    │   │   Parcels.js
+    │   │   PrivateRoute.js
+    │   │   Terms.js
     └───utils
-            ScrollToTop.js
+            ScrollTotop.js
+            data.js
+            subTotal.js
 ```
