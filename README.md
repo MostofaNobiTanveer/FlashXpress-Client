@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# FlashXpress
+### visit - https://flashxpress-53e86.web.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is [FlashXpress](https://flashxpress-53e86.web.app/), one of the best delivery service provider in Bangladesh. Others deliver boxes, We deliver dreams. We provide services that you can rely on
 
-## Available Scripts
+### Our Adjectives
 
-In the project directory, you can run:
+* We are the first in Bangladesh to have created a unique network with home delivery and Store Pickup & Return services which enhances customer experience and rationalizes costs.
+* We take care of order fulfillment, collection, transport, tracking and delivery of parcels.
+* We are the first in Bangladesh to have created a unique network with home delivery and Store Pickup & Return services which enhances customer experience and rationalizes costs.
+* Our team works round the clock to ensure fastest delivery and minimize cancellation ratio so that we, as a business partner, can ensure our customer’s growth.
 
-### `yarn start`
+# Application Summery
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Tags
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`React` `Tailwind-CSS` `React-router` `Private Route` `Firebase` `Authentication` `MongoDb` `Express` `React-Toastify` `React hook form`
 
-### `yarn test`
+### Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* In this application we have different `routes` to explore
+* You need to sign in to `create Parcel`
+* We used `Firebase authentication` service
+* you can create a parcel with awesome `form` field
+* You can `view your created parcel list` and all parcellist
+* you can `delete your parcel` if you want to.
+* you can `edit your parcel` if you want to.
 
-### `yarn build`
+### App folder structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+─src
+    ├───components
+    │       Banner.js
+    │       Brands.js
+    │       DocCard.js
+    │       Features.js
+    │       Header.js
+    │       Footer.js
+    │       Loader.js
+    │       SpecialityList.js
+    │       stats.js
+    ├───contexts
+    │       FetchProvider.js 
+    ├───firebase
+    │       firebase.config.js
+    │       firebase.init.js
+    ├───hooks
+    │       useFetch.js
+    ├───pages
+    │   ├───About
+    │   │       About.js
+    │   ├───Appoinments
+    │   │       Appointments.js
+    │   │───BookAppointment
+    │   │       BookAppointment.js
+    │   │───DocInfo
+    │   │       DocInfo.js
+    │   │───Doctors
+    │   │       Doctors.js
+    │   │───FAQ
+    │   │       FAQ.js
+    │   │───Form
+    │   │       signin.js
+    │   │       signup.js
+    │   │───Home
+    │   │       Home.js
+    │   │───NotFound
+    │   │       Notfound.js
+    │   │───PrivacyPolicies
+    │           PrivacyPolicies.js
+    └───utils
+            ScrollToTop.js
+```

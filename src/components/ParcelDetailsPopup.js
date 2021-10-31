@@ -22,28 +22,28 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
     total_payable,
   } = parcel;
   return (
-    <div class="fixed z-50 inset-0 overflow-y-auto max-w-5xl w-full mx-auto">
-      <div class="min-h-screen pt-4 px-2 pb-20 ">
+    <div className="fixed z-50 inset-0 overflow-y-auto no-scrollbar max-w-5xl w-full mx-auto">
+      <div className="min-h-screen pt-4 px-2 sm:px-4 pb-10 ">
         <div
           onClick={() => handleModalOpen(false)}
-          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         ></div>
 
-        {/* <span class="hidden sm:inline-block sm:align-middle sm:h-screen">
+        {/* <span className="hidden sm:inline-block sm:align-middle sm:h-screen">
           &#8203;
         </span> */}
 
-        <div class="bg-white rounded-lg text-left overflow-hidden shadow-xl">
+        <div className="bg-white rounded-lg text-left overflow-hidden shadow-xl">
           <div className="relative">
-            <div class="block absolute top-0 right-0 pt-4 pr-4">
+            <div className="block absolute top-0 right-0 pt-4 pr-4">
               <button
                 onClick={() => handleModalOpen(false)}
                 type="button"
-                class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                <span class="sr-only">Close</span>
+                <span className="sr-only">Close</span>
                 <svg
-                  class="h-6 w-6"
+                  className="h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -51,31 +51,31 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
                   aria-hidden="true"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               </button>
             </div>
             {/* content */}
-            <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-              <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">
+            <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+              <div className="px-4 py-5 sm:px-6">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
                   Parcel Information
                 </h3>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500 truncate">
+                <p className="mt-1 max-w-2xl text-sm text-gray-500 truncate">
                   Parcel id: {_id}
                 </p>
               </div>
-              <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
-                <dl class="sm:divide-y sm:divide-gray-200">
-                  <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-base font-medium text-smalt-500">
+              <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-base font-medium text-smalt-500">
                       Sender Information
                     </dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                       <p>{sender_name}</p>
                       <p>{sender_email}</p>
                       <p>{sender_mobile}</p>
@@ -85,13 +85,13 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
                   </div>
                 </dl>
               </div>
-              <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
-                <dl class="sm:divide-y sm:divide-gray-200">
-                  <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-base font-medium text-smalt-500">
+              <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-base font-medium text-smalt-500">
                       Recipient Information
                     </dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                       <p>{recipient_name}</p>
                       <p>{recipient_email}</p>
                       <p>{recipient_mobile}</p>
@@ -101,13 +101,13 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
                   </div>
                 </dl>
               </div>
-              <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
-                <dl class="sm:divide-y sm:divide-gray-200">
-                  <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-base font-medium text-smalt-500">
+              <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-base font-medium text-smalt-500">
                       Parcel Information
                     </dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                       <p>
                         <span className="font-medium mr-1">Sending:</span>{" "}
                         {parcel_type}
@@ -136,25 +136,25 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
                   </div>
                 </dl>
               </div>
-              <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
-                <dl class="sm:divide-y sm:divide-gray-200">
-                  <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-base font-medium text-smalt-500">
+              <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-base font-medium text-smalt-500">
                       Total Payable
                     </dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                       <h1 className="text-base font-medium">{total_payable}</h1>
                     </dd>
                   </div>
                 </dl>
               </div>
-              <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
-                <dl class="sm:divide-y sm:divide-gray-200">
-                  <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-base font-medium text-smalt-500">
+              <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
+                <dl className="sm:divide-y sm:divide-gray-200">
+                  <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-base font-medium text-smalt-500">
                       Current Status
                     </dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                       <h1 className="text-base font-medium">
                         Your Parcel is on{" "}
                         <span className="uppercase ml-4 inline-flex items-center px-4 py-2 rounded-md text-xs font-medium bg-smalt-500 text-white">
@@ -168,16 +168,16 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
             </div>
           </div>
           {/* buttons */}
-          {/* <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+          {/* <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
             <button
               type="button"
-              class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
             >
               Deactivate
             </button>
             <button
               type="button"
-              class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
+              className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
             >
               Cancel
             </button>

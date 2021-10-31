@@ -15,7 +15,7 @@ const EmptyParcelList = () => {
           aria-hidden="true"
         >
           <path
-            vector-effect="non-scaling-stroke"
+            vectorEffect="non-scaling-stroke"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"

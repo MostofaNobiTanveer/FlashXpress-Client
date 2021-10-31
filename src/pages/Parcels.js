@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import AllParcelList from "../components/AllParcelList";
-import { useAppContext } from "../contexts/AppProvider";
-import useFetch from "../hooks/useFetch";
+import { useParcelContext } from "../contexts/ParcelProvider";
 import ScrollToTop from "../utils/ScrollToTop";
 import MyParcels from "./MyParcels";
 
 const Parcels = () => {
   const [parcelOf, setParcelOf] = useState("all");
-  const { user } = useAppContext();
-  const { list: parcels } = useFetch(
-    `https://polar-fjord-39630.herokuapp.com/myParcels/${user?.email}`
-  );
-  const { list: parcelList } = useFetch(
-    "https://polar-fjord-39630.herokuapp.com/parcels"
-  );
+  const { allParcelList, myParcelList } = useParcelContext();
+
+  // const handleAllParcelCount = (n) => {
+  //   setParcelCount({ allParcel: n });
+  // };
+  // const handleMyParcelCount = (n) => {
+  //   setParcelCount({ myParcel: n });
+  // };
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-4 lg:py-10 flex-1">
@@ -32,7 +32,7 @@ const Parcels = () => {
             >
               All Parcel
               <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium inline-block">
-                {parcelList.length}
+                {allParcelList.length}
               </span>
             </button>
 
@@ -46,7 +46,7 @@ const Parcels = () => {
             >
               My Parcels
               <span className="bg-indigo-100 text-indigo-600 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium inline-block">
-                {parcels.length}
+                {myParcelList.length}
               </span>
             </button>
           </nav>

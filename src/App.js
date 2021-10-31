@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Signin from "./components/Signin";
@@ -10,7 +12,7 @@ import NotFound from "./pages/NotFound";
 import PrivateRoute from "./pages/PrivateRoute";
 import Terms from "./pages/Terms";
 import Parcels from "./pages/Parcels";
-import MyParcels from "./pages/MyParcels";
+
 
 function App() {
   return (
@@ -30,9 +32,6 @@ function App() {
           <Route path="/terms">
             <Terms />
           </Route>
-          {/* <PrivateRoute path="/parcels/myParcels">
-            <MyParcels />
-          </PrivateRoute> */}
           <PrivateRoute exact path="/parcels">
             <Parcels />
           </PrivateRoute>
@@ -47,6 +46,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        <ToastContainer />
       </Router>
     </div>
   );

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+// import useDelete from "../hooks/useDelete";
 import ParcelDetailsPopup from "./ParcelDetailsPopup";
 
-const SingleParcelList = ({ parcel }) => {
+const SingleParcelList = ({ parcel, handleParcelDelete }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const {
+    _id,
     sender_name,
     sender_email,
     sender_district,
@@ -16,6 +18,21 @@ const SingleParcelList = ({ parcel }) => {
   const handleModalOpen = (status) => {
     setModalIsOpen(status);
   };
+
+  // const { control } = useDelete();
+  // const handleParcelDelete = (id) => {
+  // fetch(`https://polar-fjord-39630.herokuapp.com/deleteParcel/${id}`, {
+  //   method: "DELETE",
+  //   headers: { "content-type": "application/json" },
+  // })
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     if (data.deletedCount) {
+  //       alert("deleted");
+  //     } else {
+  //     }
+  //   });
+  // };
 
   return (
     <li className="hover:bg-white">
@@ -55,21 +72,21 @@ const SingleParcelList = ({ parcel }) => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                   />
                 </svg>
@@ -90,7 +107,10 @@ const SingleParcelList = ({ parcel }) => {
                   />
                 </svg>
               </button>
-              <button className="inline-flex text-xs leading-5 font-semibold text-smalt-500">
+              <button
+                onClick={() => handleParcelDelete(_id)}
+                className="inline-flex text-xs leading-5 font-semibold text-smalt-500"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -108,7 +128,7 @@ const SingleParcelList = ({ parcel }) => {
               </button>
             </div>
             <div>
-              <span class="uppercase inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-smalt-500 text-white">
+              <span className="uppercase inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-smalt-500 text-white">
                 {status}
               </span>
             </div>
