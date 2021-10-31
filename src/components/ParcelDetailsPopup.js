@@ -34,9 +34,7 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
-          setLoading(false);
-        }
+        setLoading(false);
       });
   };
 
@@ -47,10 +45,6 @@ const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
           onClick={() => handleModalOpen(false)}
           className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         ></div>
-
-        {/* <span className="hidden sm:inline-block sm:align-middle sm:h-screen">
-          &#8203;
-        </span> */}
 
         <div className="bg-white rounded-lg text-left overflow-hidden shadow-xl">
           <div className="relative">
