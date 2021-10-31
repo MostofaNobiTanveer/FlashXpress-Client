@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import useDelete from "../hooks/useDelete";
 import ParcelDetailsPopup from "./ParcelDetailsPopup";
 
 const SingleParcelList = ({ parcel, handleParcelDelete }) => {

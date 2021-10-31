@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-// import { useForm } from "react-hook-form";
 
 const ParcelDetailsPopup = ({ handleModalOpen, parcel }) => {
-  // const { register, handleSubmit, reset } = useForm();
   const [parcelStatus, setParcelStatus] = useState({ status: "" });
-  // const [singleParcel, setSingleParcel] = useState({});
   const {
     _id,
     sender_name,

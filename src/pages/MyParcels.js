@@ -11,46 +11,6 @@ const MyParcels = () => {
     handleParcelDelete,
     myParcelList: parcelList,
   } = useParcelContext();
-  // const [control, setControl] = useState(false);
-  // const { user } = useAppContext();
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [parcelList, setParcelList] = useState([]);
-  // const getList = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       `https://polar-fjord-39630.herokuapp.com/myParcels/${user?.email}`
-  //     );
-  //     const data = await response.json();
-  //     setParcelList(data);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getList();
-  //   // eslint-disable-next-line
-  // }, [control]);
-
-  // const handleParcelDelete = (id) => {
-  //   const confirmation = window.confirm("Are you sure you want to delete?");
-  //   if (confirmation) {
-  //     setIsLoading(true);
-  //     fetch(`https://polar-fjord-39630.herokuapp.com/deleteParcel/${id}`, {
-  //       method: "DELETE",
-  //       headers: { "content-type": "application/json" },
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         if (data.deletedCount) {
-  //           setControl(!control);
-  //           setIsLoading(false);
-  //         } else {
-  //           setControl(false);
-  //         }
-  //       });
-  //   } else return;
-  // };
 
   if (isLoading) {
     return <Loading />;
