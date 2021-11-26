@@ -4,7 +4,7 @@ const aboutUs = [
   {
     question: "WHAT IS FlassXpress?",
     answer:
-      "eCourier is Bangladesh’s most trusted on-demand last mile logistics network offering tech-enabled one stop delivery solutions.",
+      "FlashXpress is Bangladesh’s most trusted on-demand last mile logistics network offering tech-enabled one stop delivery solutions.",
   },
   {
     question: "IS FlashXpress Reliable?",
